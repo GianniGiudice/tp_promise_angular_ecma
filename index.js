@@ -4,8 +4,6 @@ import axios from 'axios';
 
 const app = fastify({ logger: true });
 
-const instance = axios.create();
-
 app.get('/', async (req, res) => {
   return getData(3, 'FR');
 });
