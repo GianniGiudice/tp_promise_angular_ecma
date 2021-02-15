@@ -30,6 +30,8 @@ const getCatFacts = (amount) => {
         facts.push(data[i].text);
       }
       resolve(facts);
+    }).catch(err => {
+      resolve(null);
     })
   });
 };
@@ -40,6 +42,8 @@ const getFoxImage = () => {
     axios.get('https://randomfox.ca/floof/').then(res => {
       const data = res.data;
       resolve(data.image);
+    }).catch(err => {
+      resolve(null);
     })
   });
 };
@@ -50,6 +54,8 @@ const getDayOff = (country) => {
     axios.get('https://date.nager.at/api/v2/PublicHolidays/2021/' + country).then(res => {
       const data = res.data;
       resolve(data);
+    }).catch(err => {
+      resolve(null);
     })
   });
 };
