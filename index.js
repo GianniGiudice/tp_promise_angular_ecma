@@ -5,7 +5,7 @@ import axios from 'axios';
 const app = fastify({ logger: true });
 
 app.get('/', async (req, res) => {
-  return getData(3, 'FR');
+  return getData();
 });
 
 // Run the server!
